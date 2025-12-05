@@ -55,7 +55,7 @@ contract SCAD is Ownable {
     }
 
     // -------------------------
-    // CONSENTIMENT
+    // CONSENTIMENTO
     // -------------------------
 
     function darConsentimento(address autorizado, bool status) external {
@@ -67,7 +67,7 @@ contract SCAD is Ownable {
     }
 
     // -------------------------
-    // CONS
+    // CONSULTAS
     // -------------------------
 
     function verMeuCadastro() external view returns (
@@ -95,7 +95,7 @@ contract SCAD is Ownable {
     }
 
     // -------------------------
-    // AUX
+    // AUXILIARES
     // -------------------------
 
     function carteiraRegistrada(address carteira) external view returns (bool) {
