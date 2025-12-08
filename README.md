@@ -1,90 +1,92 @@
-SCAD – Secure Cadastro and Access Decentralized
 
-A decentralized system for CPF/CNPJ registration and consent management on the CESS Testnet, ensuring full user control over personal data through smart contracts.
+#  SCAD – Secure Cadastro and Access Decentralized
 
-Overview
+**Um sistema descentralizado para registro de CPF/CNPJ e gestão de consentimento na CESS Testnet, garantindo controle total do usuário sobre os dados pessoais através de Smart Contracts.**
 
-SCAD is a decentralized application (DApp) designed to eliminate centralized storage of sensitive identifiers such as CPF and CNPJ. Using the CESS Testnet blockchain, users retain full control over their information and share it only through explicit, verifiable on-chain consent.
+-----
 
-Problem Addressed
+##  Overview
 
-Data breaches in centralized systems
+**SCAD** é uma **Aplicação Descentralizada (DApp)** pioneira, concebida para **eliminar o armazenamento centralizado** de identificadores sensíveis como **CPF** e **CNPJ**.
 
-Lack of control over how personal information is shared
+Utilizando a blockchain **CESS Testnet**, os usuários mantêm o controle completo sobre suas informações e só as compartilham mediante **consentimento explícito**, verificável e totalmente *on-chain*.
 
-Unnecessary intermediaries in verification processes
+##  Problemática Endereçada
 
-Limited auditability of access and consent events
+| Problema Centralizado | Solução Descentralizada (SCAD) |
+| :--- | :--- |
+| Vazamento de dados em sistemas centralizados (SPOF). | **Descentralização** e **Segurança Criptográfica** da Blockchain. |
+| Falta de controle do usuário sobre o compartilhamento de dados. | **Controle Total** através de *Smart Contracts* e **Consentimento Explícito**. |
+| Intermediários desnecessários no processo de verificação. | **Verificação *Peer-to-Peer*** e **Imutabilidade de Registros**. |
+| Auditabilidade limitada de acessos e eventos de consentimento. | **Auditoria Completa e Transparente** (*on-chain*). |
 
-Key Benefits
+-----
 
-Full control by the data owner
+##  Key Benefits
 
-Explicit, auditable on-chain consent
+  * **Controle Total** pelo proprietário dos dados.
+  * **Consentimento Explícito** e auditável *on-chain*.
+  * **Remoção de Pontos Únicos de Falha (SPOF)**.
+  * **Privacidade Preservada** por design (Privacy by Design).
 
-Removal of single points of failure
+-----
 
-Privacy preserved by design
+##  Architecture
 
-Architecture
+SCAD implementa uma arquitetura **Web3** completa, combinando *Smart Contracts* **Solidity** robustos com um *frontend* **React** intuitivo.
 
-SCAD implements a complete Web3 architecture combining Solidity smart contracts with a React frontend.
+### Main Components
 
-Main Components
+1.  **Smart Contract `SCAD.sol`**: Lógica principal para registros, *Access Control List* (ACL) e gestão de consentimento (`darConsentimento`).
+2.  **CESS Testnet**: Blockchain compatível com EVM que hospeda os contratos.
+3.  **React Frontend**: Interface de usuário para interação.
+4.  **Wagmi + Viem**: Bibliotecas para conexão de carteira e interação *on-chain* com o EVM.
 
-Smart Contract SCAD.sol – handles registrations, ACL, and consent
+-----
 
-CESS Testnet – EVM-compatible blockchain
+##  Operation Flow
 
-React Frontend – user interface
+1.  O usuário conecta sua carteira (ex: **MetaMask**) ao *frontend*.
+2.  Registra seu **CPF** ou **CNPJ** através da função do *Smart Contract*.
+3.  Define permissões de acesso (quem pode consultar) utilizando a função `darConsentimento`.
+4.  Terceiros só podem acessar e consultar o status do registro com um **consentimento prévio e válido**.
+5.  Todos os eventos e operações são **totalmente auditáveis** na blockchain.
 
-Wagmi + Viem – wallet connection and EVM interaction
+-----
 
-Operation Flow
+##  Technology Stack
 
-User connects a wallet (MetaMask) to the frontend
+### Blockchain & Smart Contracts
 
-Registers a CPF or CNPJ through the smart contract
+| Componente | Detalhe |
+| :--- | :--- |
+| **Blockchain** | CESS Testnet (Chain ID: 11330) |
+| **Linguagem** | Solidity `^0.8.20` |
+| **Segurança** | Padrões de segurança **OpenZeppelin** |
+| **Desenvolvimento** | **Hardhat** para compilação e testes |
 
-Sets access permissions using darConsentimento
+### Frontend
 
-Third parties can only access data with prior valid consent
+| Componente | Detalhe |
+| :--- | :--- |
+| **Framework** | React 18 + TypeScript |
+| **Conexão EVM** | **Wagmi** & **Viem** |
+| **Estilização** | **Tailwind CSS** |
 
-All events and operations are fully auditable on-chain
+-----
 
-Technology Stack
-Blockchain & Smart Contracts
+## 🏁 Getting Started
 
-CESS Testnet (Chain ID: 11330)
+### Requirements
 
-Solidity ^0.8.20
+  * **Node.js** 18+
+  * **MetaMask** ou qualquer carteira compatível com EVM
+  * Conta de teste na **CESS Testnet**
+  * Conhecimento básico de Solidity e React
 
-OpenZeppelin security standards
+### Installation
 
-Hardhat for development and testing
-
-Frontend
-
-React 18 + TypeScript
-
-Wagmi
-
-Viem
-
-Tailwind CSS
-
-Getting Started
-Requirements
-
-Node.js 18+
-
-MetaMask or any EVM-compatible wallet
-
-Test account on the CESS Testnet
-
-Basic knowledge of Solidity and React
-
-Installation
+```bash
 # Clone the repository
 git clone https://github.com/usuario/scad.git
 cd scad
@@ -95,34 +97,35 @@ npm install
 # Compile smart contracts
 npx hardhat compile
 
-# Deploy to CESS Testnet
+# Deploy to CESS Testnet (Requires setup in hardhat.config.js)
 npx hardhat run scripts/deploy.js --network cess-testnet
 
 # Run the frontend
 npm run dev
+```
 
-License
+-----
 
-This project is licensed under the MIT License.
-Contributions are welcome via issues and pull requests.
+##  Technical Notes
 
-Technical Notes
-Problem Solved
+### Solução Proposta
 
-Centralized sensitive data storage increases the risk of leaks and loss of control. SCAD decentralizes registration and relies exclusively on explicit user consent.
+O armazenamento centralizado de dados sensíveis aumenta drasticamente o risco de vazamentos e perda de controle. O **SCAD** resolve isso ao **descentralizar o registro** e confiar **exclusivamente no consentimento explícito** do usuário para acesso.
 
-Key Learnings
+### Principais Aprendizados
 
-Full EVM integration with CESS, OpenZeppelin security patterns, and a React + Wagmi architecture provided a secure and developer-friendly environment.
+A integração completa do EVM com a CESS, o uso de padrões de segurança OpenZeppelin e a arquitetura React + Wagmi proporcionaram um ambiente seguro e amigável ao desenvolvedor.
 
-Core Stack Summary
+### Core Stack Summary
 
-CESS Testnet (Chain ID 11330)
+  * **CESS Testnet** (Chain ID 11330)
+  * **Solidity**
+  * **OpenZeppelin**
+  * **React**
+  * **Wagmi + Viem**
 
-Solidity
+-----
 
-OpenZeppelin
+##  License
 
-React
-
-Wagmi + Viem
+Este projeto está licenciado sob a **MIT License**.
