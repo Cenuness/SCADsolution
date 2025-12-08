@@ -1,99 +1,128 @@
-SCAD - Secure Cadastro and Access Decentralized
-Um sistema descentralizado de registro e gerenciamento de consentimento para CPF/CNPJ na CESS Testnet, garantindo controle total dos dados pelos titulares através de smart contracts.
+SCAD – Secure Cadastro and Access Decentralized
 
-🚀 Visão Geral do Projeto
-SCAD é uma aplicação descentralizada (DApp) revolucionária que resolve o problema da centralização de dados sensíveis como CPF e CNPJ. Utilizando a tecnologia blockchain da CESS Testnet, o sistema permite que usuários mantenham controle total sobre suas informações, compartilhando-as apenas mediante consentimento explícito registrado on-chain.
+A decentralized system for CPF/CNPJ registration and consent management on the CESS Testnet, ensuring full user control over personal data through smart contracts.
 
-🎯 Problema Solucionado
-• Vazamentos de dados em sistemas centralizados
-• Falta de controle sobre compartilhamento de informações
-• Intermediários desnecessários no processo de verificação
-• Auditoria complexa de acessos e consentimentos
-✅ Benefícios Principais
-• Controle total pelo titular dos dados
-• Consentimento explícito e auditável
-• Eliminação de pontos únicos de falha
-• Privacidade preservada por design
-🛠️ Arquitetura Técnica
-O projeto SCAD implementa uma arquitetura completa Web3, combinando smart contracts Solidity com frontend React e integração via Wagmi para carteiras EVM.
+Overview
 
-Componentes Principais:
-●
-Smart Contract SCAD.sol: Gerencia registros, ACL e consentimentos
-●
-CESS Testnet: Blockchain EVM compatível para部署
-●
-Frontend React: Interface para interação com o contrato
-●
-Wagmi + Viem: Conexão segura com carteiras e blockchain
-Fluxo de Operação:
-Usuário conecta carteira (MetaMask) ao frontend
-Registra CPF ou CNPJ através do smart contract
-Define permissões de acesso via função darConsentimento
-Terceiros só acessam dados mediante consentimento prévio
-Todas as operações são registradas e auditáveis on-chain
-📦 Stack de Tecnologias
+SCAD is a decentralized application (DApp) designed to eliminate centralized storage of sensitive identifiers such as CPF and CNPJ. Using the CESS Testnet blockchain, users retain full control over their information and share it only through explicit, verifiable on-chain consent.
+
+Problem Addressed
+
+Data breaches in centralized systems
+
+Lack of control over how personal information is shared
+
+Unnecessary intermediaries in verification processes
+
+Limited auditability of access and consent events
+
+Key Benefits
+
+Full control by the data owner
+
+Explicit, auditable on-chain consent
+
+Removal of single points of failure
+
+Privacy preserved by design
+
+Architecture
+
+SCAD implements a complete Web3 architecture combining Solidity smart contracts with a React frontend.
+
+Main Components
+
+Smart Contract SCAD.sol – handles registrations, ACL, and consent
+
+CESS Testnet – EVM-compatible blockchain
+
+React Frontend – user interface
+
+Wagmi + Viem – wallet connection and EVM interaction
+
+Operation Flow
+
+User connects a wallet (MetaMask) to the frontend
+
+Registers a CPF or CNPJ through the smart contract
+
+Sets access permissions using darConsentimento
+
+Third parties can only access data with prior valid consent
+
+All events and operations are fully auditable on-chain
+
+Technology Stack
 Blockchain & Smart Contracts
-• CESS Testnet (Chain ID: 11330)
-• Solidity ^0.8.20
-• OpenZeppelin para padrões de segurança
-• Hardhat para desenvolvimento e testes
-Frontend & Integração
-• React 18 com TypeScript
-• Wagmi para conexão Web3
-• Viem para interações EVM
-• Tailwind CSS para estilização
-🚀 Como Começar
-Pré-requisitos:
-Node.js 18+ instalado
-MetaMask ou carteira EVM compatível
-Contas de teste na CESS Testnet
-Conhecimento básico de Solidity e React
-Instalação e Execução:
-Setup do Projeto
 
-# Clonar o repositório
+CESS Testnet (Chain ID: 11330)
+
+Solidity ^0.8.20
+
+OpenZeppelin security standards
+
+Hardhat for development and testing
+
+Frontend
+
+React 18 + TypeScript
+
+Wagmi
+
+Viem
+
+Tailwind CSS
+
+Getting Started
+Requirements
+
+Node.js 18+
+
+MetaMask or any EVM-compatible wallet
+
+Test account on the CESS Testnet
+
+Basic knowledge of Solidity and React
+
+Installation
+# Clone the repository
 git clone https://github.com/usuario/scad.git
 cd scad
 
-# Instalar dependências
+# Install dependencies
 npm install
 
-# Compilar contratos
+# Compile smart contracts
 npx hardhat compile
 
-# Deploy na CESS Testnet
+# Deploy to CESS Testnet
 npx hardhat run scripts/deploy.js --network cess-testnet
 
-# Iniciar frontend
+# Run the frontend
 npm run dev
-📄 Licença e Contribuição
-Este projeto está licenciado sob MIT License. Contribuições são bem-vindas! Por favor, abra issues para bugs ou pull requests para melhorias.
 
-MIT License
-Web3
-DeFi
-Privacy
-Blockchain
-CESS Testnet · EVM
-•
-Privacidade por consentimento
-Documentação Técnica Detalhada
-Problema resolvido
-Centralização de registros sensíveis gera riscos de vazamento e perda de controle. SCAD descentraliza o cadastro e confia apenas no consentimento do titular.
+License
 
-Baseado em requisitos de privacidade e identidade digital.
+This project is licensed under the MIT License.
+Contributions are welcome via issues and pull requests.
 
-scad-docs.local
-Aprendizado chave
-Integração completa EVM (CESS), padrões OpenZeppelin e frontend React com Wagmi mostrou como manter segurança e DX alinhadas.
+Technical Notes
+Problem Solved
 
-Relatório interno de arquitetura.
+Centralized sensitive data storage increases the risk of leaks and loss of control. SCAD decentralizes registration and relies exclusively on explicit user consent.
 
-scad-docs.local
-Stack essencial
-CESS Testnet (Chain ID 11330), Solidity ^0.8.20, OpenZeppelin, React e Wagmi + viem formam o combo que sustenta registros e consentimentos.
+Key Learnings
 
-Configuração declarada no repositório oficial.
+Full EVM integration with CESS, OpenZeppelin security patterns, and a React + Wagmi architecture provided a secure and developer-friendly environment.
 
-scad-docs.local
+Core Stack Summary
+
+CESS Testnet (Chain ID 11330)
+
+Solidity
+
+OpenZeppelin
+
+React
+
+Wagmi + Viem
